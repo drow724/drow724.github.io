@@ -1,5 +1,6 @@
 import React from "react";
 import { DataDispatch } from "../router/MainRouter";
+import resume from "../assets/file/resume.pdf"
 
 export default function AboutComponent() {
   return (
@@ -19,7 +20,7 @@ export default function AboutComponent() {
               싶습니다.
             </p>
             <div className="ds-button-sec text-center">
-              <a href="#" className="ds-button">
+              <a href={resume} className="ds-button" target="_blank" download="송재근 | 서버 백엔드 엔지니어" rel="noreferrer">
                 Download Resume
               </a>
             </div>

@@ -15,7 +15,7 @@ export default function HeaderComponent() {
     <header ref={header} className="ds-header" id="site-header">
       <div className="container">
         <div className="ds-header-inner">
-          <a href="javascript:window.location.reload();" className="ds-logo">
+          <a href="/" className="ds-logo">
             <span>R</span>RESUME
           </a>
           <ul className="ds-social">

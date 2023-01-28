@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import profile from "../assets/images/profile.jpg";
 import { DataDispatch } from "../router/MainRouter";
 

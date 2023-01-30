@@ -23,11 +23,7 @@ const experience = [
       },
       {
         type: "text",
-        title: "React JS를 이용해 만들어 본 사이드 프로젝트"
-      },
-      {
-        type: "text",
-        title: "WebWorker 사용과 컴포넌트 렌더링 최소화 중점"
+        title: "WebWorker 사용과 컴포넌트 렌더링 최소화 중점",
       },
     ],
   },

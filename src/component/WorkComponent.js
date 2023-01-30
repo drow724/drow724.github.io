@@ -16,7 +16,7 @@ export default function WorkComponent() {
                       <section>
                         <h3 className="ds-work-tilte">{project.title}</h3>
                         <div className="row ds-experience-list">
-                          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                          <div>
                             <ul>
                               {project.list.map((data) => (
                                 <React.Fragment>

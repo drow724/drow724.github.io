@@ -1,7 +1,10 @@
 import { DataDispatch } from "../router/MainRouter";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function WorkComponent() {
+  const navigate = useNavigate();
+
   return (
     <div className="ds-work-section">
       <div className="container">
@@ -27,16 +30,24 @@ export default function WorkComponent() {
                             </ul>
                           </div>
                         </div>
-                        {project.detail && (
-                          <a
-                            href={project.detail.link}
-                            target="_blank"
-                            className="ds-button"
-                            rel="noreferrer"
-                          >
-                            {project.detail.text}
-                          </a>
-                        )}
+                        {project.detail &&
+                          (project.detail.text === "datail" ? (
+                            <button
+                              onClick={() => navigate(project.detail.link)}
+                              className="ds-button"
+                            >
+                              {project.detail.text}
+                            </button>
+                          ) : (
+                            <a
+                              href={project.detail.link}
+                              target="_blank"
+                              className="ds-button"
+                              rel="noreferrer"
+                            >
+                              {project.detail.text}
+                            </a>
+                          ))}
                       </section>
                     </div>
                     <div

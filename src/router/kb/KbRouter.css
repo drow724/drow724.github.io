@@ -1,0 +1,37 @@
+.detail {
+  align-items: center;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  font-size: 20px;
+  background-color: #f6f8fa;
+  border-image-slice: 3;
+  /* border-image-width: 3; */
+  border-image-repeat: stretch;
+  border-image-source: url(data:image/svg+xml;utf8,<?xml%20version=%221.0%22%20encoding=%22UTF-8%22%20?%3E%3Csvg%20version=%221.1%22%20width=%228%22%20height=%228%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20d=%22M3%201%20h1%20v1%20h-1%20z%20M4%201%20h1%20v1%20h-1%20z%20M2%202%20h1%20v1%20h-1%20z%20M5%202%20h1%20v1%20h-1%20z%20M1%203%20h1%20v1%20h-1%20z%20M6%203%20h1%20v1%20h-1%20z%20M1%204%20h1%20v1%20h-1%20z%20M6%204%20h1%20v1%20h-1%20z%20M2%205%20h1%20v1%20h-1%20z%20M5%205%20h1%20v1%20h-1%20z%20M3%206%20h1%20v1%20h-1%20z%20M4%206%20h1%20v1%20h-1%20z%22%20fill=%22rgb%2833,37,41%29%22%20/%3E%3C/svg%3E);
+  border-image-outset: 2;
+  /* padding: 1rem 1.5rem; */
+  padding: 50px;
+  width: 100%;
+}
+.wrap {
+  padding: 30px;
+  height: 100vh;
+}
+.ds-button {
+  padding: 11px 10px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: #f26464;
+  padding: 17px 30px;
+  border: 2px solid #f26464;
+  border-radius: 60px;
+}
+.ds-button:hover {
+  background-color: #f26464;
+  color: #fff;
+}

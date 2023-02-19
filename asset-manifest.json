@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.d4a750a0.css",
-    "main.js": "/static/js/main.a1760be2.js",
+    "main.css": "/static/css/main.f027acda.css",
+    "main.js": "/static/js/main.aca431c5.js",
     "static/media/img_ci_banner.jpeg": "/static/media/img_ci_banner.73f03c70bacc5b9e3c67.jpeg",
+    "static/media/arch.png": "/static/media/arch.dd987f542836feb01db5.png",
     "static/media/deu.jpg": "/static/media/deu.01241a3ecc0c19b0c653.jpg",
     "static/media/resume.pdf": "/static/media/resume.865347b7ec5f76699ce5.pdf",
     "static/media/profile.jpg": "/static/media/profile.fa95a0e0a5ef5f24d4f2.jpg",
     "static/media/KEB-CIG_body_01.jpeg": "/static/media/KEB-CIG_body_01.44216f47e75b50a6c5ae.jpeg",
     "static/media/KB_SymbolMark.png": "/static/media/KB_SymbolMark.380122d66a1ceb1e3340.png",
     "index.html": "/index.html",
-    "main.d4a750a0.css.map": "/static/css/main.d4a750a0.css.map",
-    "main.a1760be2.js.map": "/static/js/main.a1760be2.js.map"
+    "main.f027acda.css.map": "/static/css/main.f027acda.css.map",
+    "main.aca431c5.js.map": "/static/js/main.aca431c5.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4a750a0.css",
-    "static/js/main.a1760be2.js"
+    "static/css/main.f027acda.css",
+    "static/js/main.aca431c5.js"
   ]
 }

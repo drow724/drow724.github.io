@@ -45,18 +45,32 @@ function Kb() {
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [status, setStatus] = useState(false);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    const sse = new EventSource("http://146.56.38.5:8082/progress");
+    const sse = new EventSource("https://146.56.38.5:8082/progress");
     function getRealtimeData(data) {
-      setProgress(data);
+      setProgress((data.data / data.all) * 100);
     }
     sse.onmessage = (e) => getRealtimeData(JSON.parse(e.data));
     sse.onerror = () => {
       sse.close();
     };
+    axios
+      .get(`https://146.56.38.5:8082/status`)
+      .then((response) => response.data)
+      .then((data) => {
+        setStatus(data);
+      })
+      .catch(function (error) {
+        alert(error);
+      })
+      .finally(function () {
+        setLoading(false);
+      });
+
     return () => {
       sse.close();
     };
@@ -65,7 +79,7 @@ function Kb() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://146.56.38.5:8082/orgMapping?page=${page}`)
+      .get(`https://146.56.38.5:8082/orgMapping?page=${page}`)
       .then((response) => response.data)
       .then((data) => {
         setTotalPages(data.totalPages);
@@ -104,7 +118,13 @@ function Kb() {
           <Button variant="contained" onClick={() => navigate("/")}>
             메인
           </Button>
-          <Box sx={{ width: "100%", maxWidth: 1000 }}>
+          <Box
+            sx={{
+              width: "100%",
+              maxWidth: 1000,
+              display: status ? "block" : "none",
+            }}
+          >
             <LinearProgressWithLabel value={progress} />
           </Box>
           <div>
@@ -114,7 +134,7 @@ function Kb() {
                 setLoading(true);
                 axios({
                   method: "get",
-                  url: "http://146.56.38.5:8082/orgMapping/excel",
+                  url: "https://146.56.38.5:8082/orgMapping/excel",
                   responseType: "blob",
                 }).then((response) => {
                   const url = window.URL.createObjectURL(
@@ -141,16 +161,18 @@ function Kb() {
                   form.append("file", event.target.files[0]);
                   setLoading(true);
                   axios
-                    .post(`http://146.56.38.5:8082/orgMapping`, form)
+                    .post(`https://146.56.38.5:8082/orgMapping`, form)
                     .then((response) => {
                       alert(response.data);
+                      setLoading(false);
+                      setStatus(true);
                     })
                     .catch((error) => {
                       error.request.readyState === 4
                         ? alert("하루에 한번만 호출 가능")
                         : console.log("업로드 실패", error.request);
+                      setLoading(false);
                     });
-                  setLoading(false);
                 }}
                 hidden
                 type="file"

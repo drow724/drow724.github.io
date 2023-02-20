@@ -50,7 +50,7 @@ function Kb() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const sse = new EventSource("https://146.56.38.5:8082/progress");
+    const sse = new EventSource("https://slm.songjackson.com/progress");
     function getRealtimeData(data) {
       setProgress((data.data / data.all) * 100);
     }
@@ -59,7 +59,7 @@ function Kb() {
       sse.close();
     };
     axios
-      .get(`https://146.56.38.5:8082/status`)
+      .get(`https://slm.songjackson.com/status`)
       .then((response) => response.data)
       .then((data) => {
         setStatus(data);
@@ -79,7 +79,7 @@ function Kb() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://146.56.38.5:8082/orgMapping?page=${page}`)
+      .get(`https://slm.songjackson.com/orgMapping?page=${page}`)
       .then((response) => response.data)
       .then((data) => {
         setTotalPages(data.totalPages);
@@ -134,7 +134,7 @@ function Kb() {
                 setLoading(true);
                 axios({
                   method: "get",
-                  url: "https://146.56.38.5:8082/orgMapping/excel",
+                  url: "https://slm.songjackson.com/orgMapping/excel",
                   responseType: "blob",
                 }).then((response) => {
                   const url = window.URL.createObjectURL(
@@ -161,7 +161,7 @@ function Kb() {
                   form.append("file", event.target.files[0]);
                   setLoading(true);
                   axios
-                    .post(`https://146.56.38.5:8082/orgMapping`, form)
+                    .post(`https://slm.songjackson.com/orgMapping`, form)
                     .then((response) => {
                       alert(response.data);
                       setLoading(false);

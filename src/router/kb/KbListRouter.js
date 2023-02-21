@@ -170,7 +170,7 @@ function Kb() {
                     .catch((error) => {
                       error.request.readyState === 4
                         ? alert("하루에 한번만 호출 가능")
-                        : console.log("업로드 실패", error.request);
+                        : alert("업로드 실패");
                       setLoading(false);
                     })
                     .finally(() => {

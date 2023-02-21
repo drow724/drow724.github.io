@@ -172,6 +172,9 @@ function Kb() {
                         ? alert("하루에 한번만 호출 가능")
                         : console.log("업로드 실패", error.request);
                       setLoading(false);
+                    })
+                    .finally(() => {
+                      event.target.value = "";
                     });
                 }}
                 hidden
